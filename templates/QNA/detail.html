@@ -1,0 +1,15 @@
+{% extends 'QNA/base.html' %}
+
+{% block content %}
+
+<h1> Detail of question </h1>
+<h2> {{ question }} </h2>
+
+<table>
+{% for ans in question.answer_set.all %}
+	<tr><h4> Answer #{{ forloop.counter }}</h4></tr>
+	<tr>{{ ans.answer_text }}</tr>
+{% endfor %}
+</table>
+
+{% endblock %}

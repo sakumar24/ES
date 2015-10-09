@@ -1,0 +1,11 @@
+{% extends 'QNA/base.html' %}
+
+{% block content %}
+	<h3>Questions from {{ course }}</h3>
+
+	<table>
+	{% for que in questions %}
+		<tr><a href="/qna/question/{{ que }}/">{{ que }}</a></tr></br>
+	{% endfor %}
+	</table>
+{% endblock %}

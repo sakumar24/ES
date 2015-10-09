@@ -1,0 +1,23 @@
+{% extends 'QNA/base.html' %}
+
+{% block content %}
+<h2> All questions</h2>
+<table>
+{% for que, ans in qa_dict.items %}
+		</br>
+		<tr><h3> Question #{{ forloop.counter }}</h3></tr>
+		<tr><h4><a href="/qna/question/{{ que }}/"> {{ que }} </a></h4></tr>
+		<tr><h6>
+			{{ que.appeared_date }}
+			, Marks: {{ que.appeared_marks }}
+		</h6></tr>
+		<tr><h3>Most liked answer :</h3></tr>
+		<tr><h4>{{ ans }}</h4></tr></br>
+		<tr><h6>
+			Answered By : {{ ans.answerd_by}}	
+			, Likes : {{ ans.likes }}
+		</h6></tr>	
+{% endfor %}
+</table>
+
+{% endblock %}
